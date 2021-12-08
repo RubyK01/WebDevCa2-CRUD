@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <%= title %> </title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/addStore">Stores</a>
+    <a href="/staff">Staff</a>
+    <form method="post" action="">
+      <label for="storeID">Enter a Store ID</label>
+      <input type="text" name="newStoreID">
+      <input type="hidden" value="<%= storeID %>" name="storeID">
+      <label for="location">Enter location</label>
+      <input type="text" name="location">
+      <% console.log(storeID, location) %>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

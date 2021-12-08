@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <%= title %> </title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/staff">Staff</a>
+    <br>
+    <h1> Enter new store details. </h1>
+    <form class="" action="addStore/add" method="post">
+      <label for="storeID">Enter a Store ID</label>
+      <input type="number" name="storeID"/>
+      <br>
+      <label for="location">Enter the stores location</label>
+      <input type="text" name="location">
+      <button type="submit" name="button">Submit</button>
+    </form>
+    <% for(var i = 0; i < store.length; i++) { %>
+      <p>Store ID: <%= store[i].storeID %> <p/>
+      <p>Location: <%= store[i].location %> <p/>
+    <form action="/addStore/updateStore" method="get">
+      <input type="hidden" name="storeID" value="<%= store[i].storeID %>"/>
+      <input type="hidden" name="location" value="<% store[i].location %>">
+      <button type="submit">Update Store</button>
+    </form>
+    <form action="/addStore/delete" method="get">
+      <input type="hidden" name="storeID" value="<%= store[i].storeID %>">
+      <input type="hidden" name="location" value="<%= store[i].location %>">
+      <button type="submit">Delete Store</button>
+    </form>
+    <% } %>
+  </body>
+</html>

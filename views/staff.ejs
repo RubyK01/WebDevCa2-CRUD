@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <% title %> </title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/addStore">Stores</a>
+    <br>
+    <h1> Enter new staff details. </h1>
+    <form class="" action="staff/add" method="post">
+      <label for="staffID">Enter staff ID:</label>
+      <input type="text" name="staffID"/>
+      <br>
+      <label for="staffType">Enter job name:</label>
+      <input type="text" name="staffType">
+      <br>
+      <label for="fName">Fist name:</label>
+      <input type="text" name="fName">
+      <br>
+      <label for="lName">Last name:</label>
+      <input type="text" name="lName">
+      <br>
+      <label for="hourlyPay">Pay per hour :€</label>
+      <input type="text" name="hourlyPay">
+      <br>
+      <label for="StoreID">Store ID: </label>
+      <input type="text" name="storeID">
+      <button type="submit" name="button">Submit</button>
+    </form>
+    <% for(var i =0; i < staff.length; i++) { %>
+      <p>Staff ID: <%= staff[i].staffID %></p>
+      <p>Job: <%= staff[i].staffType %></p>
+      <p>First Name: <%= staff[i].fName %></p>
+      <p>Last Name: <%= staff[i].lName %></p>
+      <p>Pay per hour: €<%= staff[i].hourlyPay %></p>
+      <p>Store ID: <%= staff[i].storeID %></p>
+      <form action="/staff/updateStaff" method="get">
+        <input type="hidden" name="staffID" value="<%= staff[i].staffID %>">
+        <input type="hidden" name="staffType" value="<%= staff[i].staffType %>">
+        <input type="hidden" name="fName" value="<%= staff[i].fName %>">
+        <input type="hidden" name="lName" value="<%= staff[i].lName %>">
+        <input type="hidden" name="hourlyPay" value="<%= staff[i].hourlyPay %>">
+        <input type="hidden" name="storeID" value="<%= staff[i].storeID %>">
+        <button type="submit">Update Staff Member</button>
+      </form>
+      <form action="/staff/delete" method="get">
+        <input type="hidden" name="staffID" value="<%= staff[i].staffID %>">
+        <input type="hidden" name="staffType" value="<% staff[i].staffType %>">
+        <input type="hidden" name="fName" value="<% staff[i].fName %>">
+        <input type="hidden" name="lName" value="<% staff[i].lName %>">
+        <input type="hidden" name="hourlyPay" value="<% staff[i].hourlyPay %>">
+        <input type="hidden" name="storeID" value="<%= staff[i].storeID %>">
+        <button type="submit">Delete Staff Member</button>
+      </form>
+    <% } %>
+  </body>
+</html>

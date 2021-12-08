@@ -1,0 +1,22 @@
+DROP DATABASE IF EXISTS PcWorld;
+
+CREATE DATABASE PcWorld;
+
+USE PcWorld;
+
+CREATE TABLE store(
+storeID INT NOT NULL,
+storeName VARCHAR(255),
+location VARCHAR(255),
+PRIMARY KEY (storeID)
+);
+
+CREATE TABLE staff(
+staffID INT NOT NULL,
+staffType VARCHAR(255),
+fName VARCHAR(255),
+lName VARCHAR(255),
+hourlyPay FLOAT NOT NULL,
+PRIMARY KEY (staffID)
+);
+

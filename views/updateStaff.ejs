@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> <%= title %> </title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/addStore">Stores</a>
+    <a href="/staff">Staff</a>
+    <form method="post" action="">
+      <label for="staffID">Enter a Staff ID</label>
+      <input type="text" name="newStaffID">
+      <input type="hidden" value="<%=staffID %>" name="staffID">
+      <br>
+      <label for="staffType">Enter Job</label>
+      <input type="text" name="staffType">
+      <br>
+      <label for="fName">First Name: </label>
+      <input type="text" name="fName">
+      <br>
+      <label for="lName">Last Name: </label>
+      <input type="text" name="lName">
+      <br>
+      <label for="hourlyPay">Pay per hour: €</label>
+      <input type="text" name="hourlyPay">
+      <br>
+      <label for="storeID">Store ID: </label>
+      <input type="text" name="storeID">
+      <% console.log(staffID, staffType) %>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
